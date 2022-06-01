@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Pergunta 1</title>
+</head>
+<body>
+    <div id="navegacao">
+        <h1>Bem Vindo! <br>Este é o Quiz de Futebol do Gui</h1>
+    </div>
+    <div id="conteudo">
+        <h2>Pergunta 1</h2>
+        <h3>Qual o país que possui mais Copas do Mundo?</h3>
+        <form action="pergunta2.php" method="post" onsubmit="return validaForm()">
+            <input type="radio" name="pergunta1" value="Alemanha">Alemanha<br>
+            <input type="radio" name="pergunta1" value="Brasil">Brasil<br>
+            <input type="radio" name="pergunta1" value="França">França<br>
+            <input type="radio" name="pergunta1" value="Argentina">Argentina<br>
+            <br>
+            <input type="submit" name="enviar" value="Enviar">
+        </form>
+        <br>
+        <img src="imagens/trofeuCopa.jpg" alt="Trofeu da Copa do Mundo"  width="384" height="216">
+    </div>
+<script>
+    function validaForm(){
+        var radios = document.getElementsByName("pergunta1");
+        var formValido = false;
+
+        var i = 0;
+        while (!formValido && i < radios.length) {
+            if(radios[i].checked) formValido = true;
+            i++;        
+        }
+
+        if (!formValido) alert("Por favor, escolha uma opção");
+        return formValido;
+    }
+</script>
+</body>
+</html>
